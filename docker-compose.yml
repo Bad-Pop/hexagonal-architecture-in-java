@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  postgres:
+    container_name: postgres-prez-carbon-archi-hexa
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: prez-archi-hexa
+    ports:
+      - "5432:5432"
+    volumes:
+      - prez-archi-hexa:/applis/docker-compose/prez/data
+volumes:
+  prez-archi-hexa:
+    external: true
